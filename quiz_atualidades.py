@@ -1,0 +1,118 @@
+# Yuri Barboza Bezerra Santos 
+# 32021399 - Sistemas de Informação Mackenzie
+import time
+from random import randint
+perguntas_facil = ["Quais o país com a maior população carcerária do mundo?\na)Índia b)Indonésia c)China d)Brasil e)Estados Unidos","Que país que tem realizado testes nucleares e, em 2017, ameaçou principalmente os Estados Unidos da América?\na) Síria b)Coreia do Norte c)China d) Paquistão e)Israel","O que é Brexit?\na) Saída do Reino Unido da Zona Euro b) Saída do Reino Unido da União Europeia c) Saída da Inglaterra do Reino Unido d) Fim da monarquia no Reino Unido e) Mudança do sistema de governo no Reino Unido","Qual a nacionalidade do sociólogo e filósofo David Émile Durkheim?\na) Francesa b)Alemã  c) Inglesa d) Italiana e) Norueguesa","Por que a Catalunha foi um tema de destaque em 2017?\na) Por causa da crise que provoca na Espanha quando luta pela sua independência b) Porque quer sair da União Europeia c) Porque o reino da Espanha quer se separar da Catalunha d) Porque quer sair da Zona Euro e criar uma moeda própria e) Porque a Espanha acredita que a separação será benéfica para a economia espanhola","Qual a função da ONU?\na) Zelar pela cultura em todas as nações b) Unir as nações com o objetivo de manter a paz e a segurança mundial c) Financiar países em desenvolvimento d) Regular o funcionamento do sistema financeiro a nível internacional e) Gerenciar acordos de comércio entre os países","Qual a primeira mulher a ganhar um prêmio Nobel?\na) Madre Teresa de Calcutá b) Elizabeth Blackweel c) Irène Joliot-Curie d) Valentina Tereshkova e) Marie Curie","Chernobyl e Césio-137 fazem parte dos maiores acidentes nucleares da história. Em que países aconteceram?\na) Rússia e Espanha b) Ucrânia e Brasil c) Estados Unidos e Ucrânia d) Japão e Brasil e) Taiwan e Alemanha","Em que país se localizava Auschwitz, o maior campo de concentração nazi?\n a) Alemanha b) Polônia c) Estados Unidos d) Áustria e) Japão","Quem é o autor do famoso discurso Eu tenho um sonho?\na) Nelson Mandela b) Martin Luther King c) Zumbi dos Palmares d) Barack Obama e) Carlota Joaquina"]
+respostas_facil = ["e","b","b","a","a","b","e","b","b","b"]
+erro_facil = ["Alternativa E:\nSegundo dados da pesquisa de junho de 2016 da World Prison Brief, Institute for Prison Studies e Infopen/Ministério da Justiça, os quatro países que lideram o ranking com maiores populações carcerárias do mundo são: Estados Unidos (2,217,000); China (1,657,812); Brasil (726,712) e Rússia (642,470).","Alternativa B:\nO conflito entre Estados Unidos e Coreia do Norte já apresenta uma longa história, que teve início após a Segunda Guerra Mundial, mais precisamente na Guerra da Coreia (1950-1953), quando ambos países se tornaram inimigos diante das diferenças ideológicas. A partir de 2017, o conflito entre os dois países foi deflagrado com o lançamento de mísseis de longo alcance, no entanto, os presidentes dos respectivos países (Donald Trump e Kim Jong-un e) se encontraram em 2018 e 2019, com o intuito de amenizar as tensões.","Alternativa B:\nO termo Brexit vem da junção das palavras inglesas “Britain” (Bretanha) e “Exit” (saída). Esse processo, que teve início com o referendo de 23 de junho de 2016, representa a saída do Reino Unido da União Europeia. No dia 31 de janeiro de 2020, o Reino Unido definitivamente deixou a União Europeia, tornando-se o primeiro país a fazê-lo.","Alternativa A:\nDavid Émile Durkheim (1858- 1917) foi um dos maiores sociólogos, filósofos e antropólogos de todos os tempos. Nasceu na cidade francesa de Épinal, e faleceu em Paris. Considerado o “pai da Sociologia”, Durkheim foi o fundador da “Escola Francesa de Sociologia”, sendo um dos responsáveis por tornar a Sociologia uma disciplina acadêmica, ao conciliar a pesquisa empírica com a teoria, embasadas em rigorosos métodos.","Alternativa A:\n Por causa da crise que provoca na Espanha quando luta pela sua independência. Em 2017, o movimento pela separação da Catalunha voltou a se intensificar, a partir de um referendo que contou com a participação de 42% da população catalã. Considerada ilegal, essa ação gerou muita violência por parte das forças policiais. Note que a luta pela independência da Catalunha ocorreu diversas vezes ao longo da história e tem como objetivo tornar a região um país independente da Espanha.","Alternativa B:\n Unir as nações com o objetivo de manter a paz e a segurança a nível internacional. A Organização das Nações Unidas (ONU), criada em 1945, tem como objetivos: Manter a paz e a segurança; Proteger os direitos humanos; Distribuir ajuda humanitária; Promover o desenvolvimento sustentável; Defender o direito internacional.","Alternativa E:\n Marie Curie. Marie Curie (1867-1934), cientista polonesa, foi a primeira mulher a receber um Prêmio Nobel na história. Ela recebeu o prémio duas vezes: em 1903 na categoria de física; e em 1911, na categoria de química.","Alternativa B:\n Ucrânia e Brasil. O acidente de Chernobyl, cidade localizada no norte da Ucrânia, aconteceu em 26 de abril de 1986, quando um reator nuclear explodiu causando a liberação de resíduos tóxicos em uma enorme área. O acidente com césio-137 aconteceu em Goiânia em 13 de setembro de 1987, quando catadores de lixo recolheram um aparelho de radioterapia em uma clínica desativada, sem ter conhecimento do que se tratava, com o intuito de vendê-la no ferro-velho.","Alternativa B:\n Polônia. O maior centro de extermínio da Segunda Guerra Mundial foi instalado na Polônia, a 60 quilômetros da sua capital. Fundado em 1940, funcionou até janeiro de 1945.","Alternativa B:\n Martin Luther King. O célebre discurso Eu tenho um sonho (I Have a Dream) foi feito por Martin Luther King em 1963, numa manifestação civil que reuniu 250 mil pessoas."]
+perguntas_dificil = ["Quais os quatros países que têm a maior população carcerária do mundo? a) Brasil, Estados Unidos, México e Índia b) China, Estados Unidos, Índia e Indonésia c) Rússia, Japão, Canadá e China d) Estados Unidos, China, Rússia e Brasil e) Brasil, Estados Unidos, China e Vaticano","O que é o Acordo de Paris?\na) Acordo internacional que trata da restrição de imigrantes em Paris b) Acordo internacional que trata da proteção da França dos atentados terroristas c) Acordo internacional que trata do Desenvolvimento Sustentável d) Acordo internacional que trata da poluição radioativa e) Acordo internacional que trata do aquecimento global","Em que governo brasileiro foi sancionada a lei das cotas para o ensino superior?\na) Governo de Dilma Rousseff b) Governo de José Sarney c) Governo de Fernando Henrique d) Governo de Tancredo Neves e) Governo de Luís Inácio Lula da Silva","Mao Tsé-tung, Jean Jacques Dessalines e Nelson Mandela foram respectivamente os governantes de quais países?\na) Japão, França e Angola b) Índia, Alemanha e Portugal c) China, Haiti e África do Sul d) Taiwan, Bélgica, Moçambique e) Macau, Suíça, Estados Unidos da América","Como morreu Saddam Hussein?\na) Vítima de câncer b) Suicídio c) Ataque cardíaco d) Enforcado e) Decapitado","Que decisão de Donald Trump alarmou a comunidade internacional em dezembro de 2017?\na) Reconhecimento de Jerusalém como capital de Israel b) Retificação da decisão sobre a importação de troféus de caça c) Decreto contra a lei de saúde “Obamacare” d) Construção de muro na fronteira entre Estados Unidos e México e) Construção de oleodutos","Quais as respectivas cores da reciclagem do papel, do vidro, do metal e do plástico?\na) azul, verde, amarelo e vermelho b) verde, azul, vermelho e amarelo c) vermelho, amarelo, verde e azul d) azul, amarelo, verde e vermelho e) verde, amarelo, azul e vermelho","Quais as maiores pandemias da história?\na) Gripe espanhola e câncer b) Varíola e hipertensão c) Peste negra e covid-19 d) Cólera e colesterol e) Asma e Gripe espanhola","Qual das alternativas apresenta os motivos de cancelamento das Olimpíadas de 1916, 1940 e 1944?\na) Atrasos nas obras dos estádios b) Roubo da tocha olímpica c) Primeira Guerra Mundial e coronavírus d) Primeira e Segunda guerras mundiais e) Falta de financiamento","Em qual das alternativas todos são sintomas mais comuns do covid-19.\na) Febre, tosse e diarreia b) Febre, tosse e dificuldades para respirar c) Dor de cabeça, febre e tontura d) Mal-estar, vômitos e diarreia e) Perda de visão, febre e tosse"]
+respostas_dificil = ["d","e","a","c","d","a","a","c","d","b"]
+erro_dificil = ["Alternativa D:\nSegundo dados da pesquisa de junho de 2016 da World Prison Brief, Institute for Prison Studies e Infopen/Ministério da Justiça, os quatro países que lideram o ranking com maiores populações carcerárias do mundo são: Estados Unidos (2,217,000); China (1,657,812); Brasil (726,712) e Rússia (642,470).","Alternativa E:\nO Acordo de Paris é um acordo internacional que foi adotado durante a Conferência das Partes - COP 21, em Paris, no ano de 2015. Aprovado por 195 países, ele tem como objetivo central minimizar os impactos causados pelo aquecimento global. Todos os países envolvidos se comprometeram a reduzir emissões de gases de efeito estufa nas próximas décadas.","Alternativa A:\nGoverno de Dilma Rousseff. Trata-se da Lei Nº 12.711, de 29 de agosto de 2012, a qual dispõe sobre o ingresso nas universidades federais e nas instituições federais de ensino técnico de nível médio.","Alternativa C:\nChina, Haiti e África do Sul.\nMao Tsé-tung (1893-1976) foi um líder comunista que governou a China entre 1946 e 1976.\nJean Jacques Dessalines (1758-1806) liderou a Revolução Haitiana, tendo sido o primeiro governante do país. Reinou entre 1804 e 1806, até ser assassinado.\nNelson Mandela (1918-2013) foi presidente da África do Sul entre 1994 e 1999. Líder do movimento contra o Apartheid, em 1993 recebeu o Prêmio Nobel da Paz.","Alternativa D:\nEnforcado. Saddam Hussein (1937-2006) foi o presidente do Iraque entre 1979 e 2003. Ditador, espalhou o terror pelo país. Capturado pelos Estados Unidos da América (EUA), foi julgado pelo governo interino do Iraque, tendo sido declarado culpado por crimes contra a humanidade. A sentença foi condenação à morte por enforcamento.","Alternativa A:\nReconhecimento de Jerusalém como capital de Israel. Há décadas, Jerusalém é disputada por Israel e Palestina. A maior parte da comunidade internacional não reconhece Jerusalém como capital de Israel. Por esse motivo, todas as embaixadas localizavam-se em Tel Aviv, até os Estados Unidos da América (EUA) deslocar a sua embaixada em Tel Aviv para Jerusalém em maio de 2018.","Alternativa A:\n azul, verde, amarelo e vermelho. azul: papel verde: vidro amarelo: metal vermelho: plástico\nAlém desses, há outras cores que são utilizados na coleta seletiva: \nbranco: resíduos ambulatoriais e de serviços de saúde; cinza: resíduo geral cuja separação não é possível; laranja: pilhas e baterias; marrom: lixo orgânico; preto: madeira; roxo: resíduos radioativos.","Alternativa C:\n Peste negra e covid-19. Com exceção da alternativa c), em cada uma das alternativas consta apenas uma pandemia. Câncer, hipertensão, colesterol e asma não podem ser pandemias, porque não são doenças contagiosas.","Alternativa D:\n Primeira e Segunda guerras mundiais. Em função da Primeira Guerra Mundial, foi cancelado o evento das Olimpíadas de Berlim 1916. Já a Segunda Guerra Mundial foi responsável pelo cancelamento das Olimpíadas de Tóquio 1940 e Londres 1944. Lembrando que as Olimpíadas de Tóquio 2020 não foram canceladas, mas sim adiadas para 2021.","Alternativa B: Febre, tosse e dificuldades para respirar.\nDe acordo com o Ministério da Saúde, os sintomas mais comuns do covid-19 são:\nTosse\nFebre\nCoriza\nDor de garganta\nDificuldade para respirar\nDiarreia, dor de cabeça, tontura, mal-estar, vômitos e perda de visão não são sintomas"]
+loop_1 = True
+pontos = 0
+cont = 0
+perg_fase = ["Primeira","Segunda","Terceira","Quarta","Quinta","Sexta","Sétima","Oitava","Nona","Décima e última"]
+def start():
+    print("-"*84)
+    print("-"*84)
+    print("-"*10,"Bem vindo ao QUIZ GAME de ATUALIDADES e CONHECIMENTOS GERAIS!","-"*11)
+    print("-"*84)
+    print("-"*84)
+    time.sleep(1)
+    print("O jogo consiste em 10 perguntas em 2 dificildades diferentes.\nAcerte 7 ou mais perguntas para receber um código de desconto na MJland!")
+    print("Boa sorte")
+
+def start_facil():
+    print("Preparando quiz...")
+    time.sleep(1)    
+    global pontos 
+    pontos = 0
+    cont = 0
+    for loop in perguntas_facil:
+        print("Contagem:",cont)       
+        print(f"{perg_fase[cont]} pergunta: ")
+        print(perguntas_facil[cont])
+        resp = input("Digite a letra de sua resposta: ")
+        if resp == respostas_facil[cont]:
+            print("Acertou!")
+            pontos += 1
+            print(f"Você possui {pontos} ponto(s)")
+            info = input("Deseja ler sobre a pergunta?(Digite S ou N):")
+            if info == "s":
+                print(erro_facil[cont])
+        else:
+            print("Errou...")
+            print("A resposta correta é:",respostas_facil[cont])
+            time.sleep(2)
+            print("Informações sobre o tema: ")
+            print(erro_facil[cont])
+            print(f"Você possui {pontos} ponto(s)")
+            time.sleep(2)
+        cont = cont + 1
+        time.sleep(1)
+    
+    return pontos
+
+def start_dificil():
+    print("Preparando quiz...")
+    time.sleep(1)    
+    global pontos 
+    pontos = 0
+    cont = 0
+    for loop in perguntas_dificil:
+        print(f"{perg_fase[cont]} pergunta: ")
+        print(perguntas_dificil[cont])
+        resp = input("Digite a letra de sua resposta: ")
+        if resp == respostas_dificil[cont]:
+            print("Acertou!")
+            pontos += 1
+            print(f"Você possui {pontos} ponto(s)")
+            info = input("Deseja ler sobre a pergunta?(Digite S ou N):")
+            if info == "s":
+                print(erro_dificil[cont])
+        elif resp != respostas_dificil[cont]:
+            print("Errou...")
+            print("A resposta correta é:",respostas_dificil[cont])
+            time.sleep(2)
+            print("Informações sobre o tema: ")
+            print(erro_dificil[cont])
+            print(f"Você possui {pontos} ponto(s)")
+            time.sleep(2)
+        cont = cont + 1
+        time.sleep(1)
+
+    return pontos
+
+def main():
+    loop_1 = True
+    start()
+    while loop_1 == True:
+        print("Modos de jogo: ")
+        print("1- Fácil ")
+        print("2- Difícil ")
+        print("0- Sair do jogo ")
+        modo = int(input("Selecione o modo de jogo fácil ou difícil(digite 1 ou 2): "))
+        if modo == 1:            
+            start_facil()           
+            print("Fim do jogo!")
+            if pontos >= 7:
+                c1 = str(randint(0,9))
+                c2 = str(randint(10,99))
+                c3 = str(randint(100,999))                             
+                print(f"Parabéns por obter {pontos} pontos! Seu código de desconto é: {c1+c2+c3} ")
+        elif modo == 2:
+            start_dificil()   
+            print("Fim do jogo!")
+            if pontos >= 7:
+                c1 = str(randint(0,9))
+                c2 = str(randint(10,99))
+                c3 = str(randint(100,999))                             
+                print(f"Parabéns por obter {pontos} pontos! Seu código de desconto é: {c1+c2+c3} ")
+        elif modo == 0:
+            time.sleep(1)
+            loop_1 = False
+            exit("Até logo!")
+        else:
+            print("Entrada inválida. Selecione um modo válido; 1 ou 2")           
+  
+main()
